@@ -10,7 +10,9 @@ import {
     CSModal,
     CSModalHeader,
     CSModalBody,
-    CSModalFooter, CSInputText,
+    CSModalFooter,
+    CSInputText,
+    CSLookup
 } from '@cloudsense/cs-ui-components';
 
 interface CSModalPreviewState {
@@ -18,6 +20,42 @@ interface CSModalPreviewState {
     secondModalVisible: boolean;
     thirdModalVisible: boolean;
 }
+
+const sampleLookup = {
+    columns: [
+        { key: 'Account', label: 'Account' },
+        { key: 'Industry', label: 'Industry' }
+    ],
+    data: [
+        { Id: 1, Account: 'Acme', Industry: 'Manufacturing' },
+        { Id: 2, Account: 'Global Media', Industry: 'Industry' },
+        { Id: 3, Account: 'Salesforce', Industry: 'Software' },
+        { Id: 4, Account: 'Elisa', Industry: 'Telecommunications' },
+        { Id: 5, Account: 'Facebook', Industry: 'Social media' },
+        { Id: 6, Account: 'Google', Industry: 'Technology' },
+        { Id: 7, Account: 'Spotify', Industry: 'Streaming and media' },
+        { Id: 8, Account: 'British Gas', Industry: 'Energy' },
+        { Id: 9, Account: 'Columbia Pictures', Industry: 'Film' },
+        { Id: 10, Account: 'Rimac', Industry: 'Car manufacturing' },
+        { Id: 11, Account: 'News Corp', Industry: 'Mass media' },
+        { Id: 12, Account: 'Telstra', Industry: 'Telecommunications' },
+        { Id: 13, Account: 'Netflix', Industry: 'Production' },
+        { Id: 14, Account: 'Instagram', Industry: 'Social media' },
+        { Id: 15, Account: 'Vodafone', Industry: 'Telecommunications' },
+        { Id: 16, Account: 'Apple', Industry: 'Software' },
+        { Id: 17, Account: 'Amazon', Industry: 'E-commerce' },
+        { Id: 18, Account: 'Ikea', Industry: 'Furniture retail' },
+        { Id: 19, Account: 'Microsoft', Industry: 'Software' },
+        { Id: 20, Account: 'Visa', Industry: 'Finance' },
+        { Id: 21, Account: 'IBM', Industry: 'Software' },
+        { Id: 22, Account: 'eBay', Industry: 'E-commerce' },
+        { Id: 23, Account: 'Oracle', Industry: 'Software' },
+        { Id: 24, Account: 'Tesla', Industry: 'Car manufacturing' },
+        { Id: 25, Account: 'YouTube', Industry: 'Streaming and media' },
+        { Id: 26, Account: 'O2', Industry: 'Telecommunications' },
+        { Id: 27, Account: 'Warner Bros. Pictures', Industry: 'Film' }
+    ]
+};
 
 class CPGrid extends React.Component<CSModalPreviewState> {
     state = {
@@ -50,34 +88,106 @@ class CPGrid extends React.Component<CSModalPreviewState> {
 
                     </CSModalHeader>
                     <CSModalBody padding="1.5rem 1.5rem 1rem 1.5rem">
-                        <CSButton
-                            className="prepopulate-btn"
-                            label="prepopulate data"
-                            labelHidden
-                            iconName="edit"
-                            btnType="transparent"
-                            btnStyle="brand"
-                        />
                         <div className="column-wrapper">
                             <CSInputText label="Commercial Product" />
                             <div className="placeholder"></div>
                             <CSInputText label="List Recurring Charge" />
-                            <div className="btn-label-wrapper">
-                                <span>Pricing Rule</span>
-                                <CSButton
-                                    className="open-modal-btn"
-                                    label="New price rule"
-                                    onClick={() => this.setState({ secondModalVisible: true })}
-                                />
-                            </div>
                             <CSInputText label="List One Off Charge" />
-                            <div className="btn-label-wrapper">
-                                <span>Pricing Rule Group</span>
-                                <CSButton
-                                    className="open-modal-btn"
-                                    label="New price rule group"
-                                    onClick={() => this.setState({ thirdModalVisible: true })}
-                                />
+                            <div className="field-wrapper">
+                                <label>Pricing Rule</label>
+                                <div className="lookup-btn-wrapper">
+                                    <CSLookup
+                                        fieldToBeDisplayed="Account"
+                                        label="Account"
+                                        labelHidden
+                                        lookupColumns={sampleLookup.columns}
+                                        lookupOptions={[
+                                            { Id: 1, Account: 'Acme', Industry: 'Manufacturing' },
+                                            { Id: 2, Account: 'Global Media', Industry: 'Industry' },
+                                            { Id: 3, Account: 'Salesforce', Industry: 'Software' },
+                                            { Id: 4, Account: 'Elisa', Industry: 'Telecommunications' },
+                                            { Id: 5, Account: 'Facebook', Industry: 'Social media' },
+                                            { Id: 6, Account: 'Google', Industry: 'Technology' },
+                                            { Id: 7, Account: 'Spotify', Industry: 'Streaming and media' },
+                                            { Id: 8, Account: 'British Gas', Industry: 'Energy' },
+                                            { Id: 9, Account: 'Columbia Pictures', Industry: 'Film' },
+                                            { Id: 10, Account: 'Rimac', Industry: 'Car manufacturing' },
+                                            { Id: 11, Account: 'News Corp', Industry: 'Mass media' },
+                                            { Id: 12, Account: 'Telstra', Industry: 'Telecommunications' },
+                                            { Id: 13, Account: 'Netflix', Industry: 'Production' },
+                                            { Id: 14, Account: 'Instagram', Industry: 'Social media' },
+                                            { Id: 15, Account: 'Vodafone', Industry: 'Telecommunications' },
+                                            { Id: 16, Account: 'Apple', Industry: 'Software' },
+                                            { Id: 17, Account: 'Amazon', Industry: 'E-commerce' },
+                                            { Id: 18, Account: 'Ikea', Industry: 'Furniture retail' },
+                                            { Id: 19, Account: 'Microsoft', Industry: 'Software' },
+                                            { Id: 20, Account: 'Visa', Industry: 'Finance' },
+                                            { Id: 21, Account: 'IBM', Industry: 'Software' },
+                                            { Id: 22, Account: 'eBay', Industry: 'E-commerce' },
+                                            { Id: 23, Account: 'Oracle', Industry: 'Software' },
+                                            { Id: 24, Account: 'Tesla', Industry: 'Car manufacturing' },
+                                            { Id: 25, Account: 'YouTube', Industry: 'Streaming and media' },
+                                            { Id: 26, Account: 'O2', Industry: 'Telecommunications' },
+                                            { Id: 27, Account: 'Warner Bros. Pictures', Industry: 'Film' }
+                                        ]}
+                                        borderRadius="0.25rem 0 0 0.25rem"
+                                        mode="client"
+                                    />
+                                    <CSButton
+                                        className="open-modal-btn"
+                                        label="New"
+                                        borderRadius="0 0.25rem 0.25rem 0"
+                                        onClick={() => this.setState({ thirdModalVisible: true })}
+                                    />
+                                </div>
+                            </div>
+                            <div className="field-wrapper">
+                                <label>Pricing Rule Group</label>
+                                <div className="lookup-btn-wrapper">
+                                    <CSLookup
+                                        fieldToBeDisplayed="Account"
+                                        label="Account"
+                                        labelHidden
+                                        lookupColumns={sampleLookup.columns}
+                                        lookupOptions={[
+                                            { Id: 1, Account: 'Acme', Industry: 'Manufacturing' },
+                                            { Id: 2, Account: 'Global Media', Industry: 'Industry' },
+                                            { Id: 3, Account: 'Salesforce', Industry: 'Software' },
+                                            { Id: 4, Account: 'Elisa', Industry: 'Telecommunications' },
+                                            { Id: 5, Account: 'Facebook', Industry: 'Social media' },
+                                            { Id: 6, Account: 'Google', Industry: 'Technology' },
+                                            { Id: 7, Account: 'Spotify', Industry: 'Streaming and media' },
+                                            { Id: 8, Account: 'British Gas', Industry: 'Energy' },
+                                            { Id: 9, Account: 'Columbia Pictures', Industry: 'Film' },
+                                            { Id: 10, Account: 'Rimac', Industry: 'Car manufacturing' },
+                                            { Id: 11, Account: 'News Corp', Industry: 'Mass media' },
+                                            { Id: 12, Account: 'Telstra', Industry: 'Telecommunications' },
+                                            { Id: 13, Account: 'Netflix', Industry: 'Production' },
+                                            { Id: 14, Account: 'Instagram', Industry: 'Social media' },
+                                            { Id: 15, Account: 'Vodafone', Industry: 'Telecommunications' },
+                                            { Id: 16, Account: 'Apple', Industry: 'Software' },
+                                            { Id: 17, Account: 'Amazon', Industry: 'E-commerce' },
+                                            { Id: 18, Account: 'Ikea', Industry: 'Furniture retail' },
+                                            { Id: 19, Account: 'Microsoft', Industry: 'Software' },
+                                            { Id: 20, Account: 'Visa', Industry: 'Finance' },
+                                            { Id: 21, Account: 'IBM', Industry: 'Software' },
+                                            { Id: 22, Account: 'eBay', Industry: 'E-commerce' },
+                                            { Id: 23, Account: 'Oracle', Industry: 'Software' },
+                                            { Id: 24, Account: 'Tesla', Industry: 'Car manufacturing' },
+                                            { Id: 25, Account: 'YouTube', Industry: 'Streaming and media' },
+                                            { Id: 26, Account: 'O2', Industry: 'Telecommunications' },
+                                            { Id: 27, Account: 'Warner Bros. Pictures', Industry: 'Film' }
+                                        ]}
+                                        borderRadius="0.25rem 0 0 0.25rem"
+                                        mode="client"
+                                    />
+                                    <CSButton
+                                        className="open-modal-btn"
+                                        label="New"
+                                        borderRadius="0 0.25rem 0.25rem 0"
+                                        onClick={() => this.setState({ thirdModalVisible: true })}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </CSModalBody>
@@ -109,6 +219,15 @@ class CPGrid extends React.Component<CSModalPreviewState> {
                 >
                     <CSModalHeader title="New Price Rule" />
                     <CSModalBody padding="1.5rem 1.5rem 1rem 1.5rem">
+                        <CSButton
+                            className="prepopulate-btn"
+                            label="prepopulate data"
+                            labelHidden
+                            iconName="edit"
+                            size="small"
+                            btnType="transparent"
+                            btnStyle="brand"
+                        />
                         <div className="column-wrapper">
                             <div className="col">
                                 <CSInputText label="Pricing Rule Name" />
@@ -148,6 +267,15 @@ class CPGrid extends React.Component<CSModalPreviewState> {
                 >
                     <CSModalHeader title="New Price Rule" />
                     <CSModalBody padding="1.5rem 1.5rem 1rem 1.5rem">
+                        <CSButton
+                            className="prepopulate-btn"
+                            label="prepopulate data"
+                            labelHidden
+                            iconName="edit"
+                            size="small"
+                            btnType="transparent"
+                            btnStyle="brand"
+                        />
                         <div className="column-wrapper">
                             <div className="col">
                                 <CSInputText label="Pricing Rule Group Name" />
