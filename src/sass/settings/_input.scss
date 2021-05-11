@@ -1,0 +1,79 @@
+@mixin input {
+	display: inline-block;
+	font-size: 0.75rem;
+	line-height: 1.875rem;
+	min-height: 2rem;
+	padding: 0 0.75rem;
+	margin: 0;
+	transition: border 0.1s linear, background-color 0.1s linear;
+	width: 100%;
+	@include overflow-ellipsis;
+	@include sbg(--cs-input-bg);
+	@include css4 {
+		border: 1px solid cvar(--cs-input-br);
+	}
+
+	&:active,
+	&:focus {
+		outline: 0;
+		@include css4 {
+			border-color: cvar(--cs-input-active-br);
+			box-shadow: 0 0 0.1875rem cvar(--cs-input-shadow);
+		}
+	}
+
+	&:read-only {
+		cursor: default;
+		font-size: 0.875rem;
+		font-weight: $font-weight-normal;
+		padding-left: 0;
+		@include sbg(--cs-transparent);
+		@include css4 {
+			border-color: cvar(--cs-transparent);
+		}
+
+		&:active,
+		&:focus {
+			@include css4 {
+				box-shadow: none;
+			}
+		}
+	}
+
+	&:disabled {
+		cursor: default;
+		user-select: none;
+		@include sbg(--cs-input-disabled-bg);
+		@include css4 {
+			border-color: cvar(--cs-input-disabled-br);
+		}
+
+		&:active,
+		&:focus {
+			box-shadow: none;
+			@include css4 {
+				border-color: cvar(--cs-input-disabled-br);
+			}
+		}
+	}
+
+	// Removes input number arrows on Mozilla if read-only
+	&[type="number"]:-moz-read-only {
+		-moz-appearance: textfield;
+	}
+
+	// Error
+	&-error {
+		@include css4 {
+			border: 1px solid cvar(--cs-input-error-br);
+		}
+
+		&:active,
+		&:focus {
+			@include css4 {
+				border-color: cvar(--cs-input-error-c);
+				box-shadow: 0 0 3px cvar(--cs-input-error-shadow);
+			}
+		}
+	}
+}

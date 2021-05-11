@@ -1,0 +1,762 @@
+/* COLORS */
+$cs-black: #000000;
+$cs-gray-dark-1: #080707;
+$cs-gray-dark-2: #3e3e3c;
+$cs-gray-dark-3: #444444;
+$cs-gray-dark-4: #5e5d60;
+$cs-gray-dark-5: #706e6b;
+$cs-gray-dark-6: #747474;
+$cs-gray-dark-7: #777f8b;
+$cs-gray-medium-1: #999999;
+$cs-gray-medium-2: #b0adab;
+$cs-gray-medium-3: #c9c7c5;
+$cs-gray-light-1: #d8d8d8;
+$cs-gray-light-2: #dddbda;
+$cs-gray-light-3: #dddddd;
+$cs-gray-light-4: #ebebeb;
+$cs-gray-light-5: #ecebea;
+$cs-gray-light-6: #f2f3f3;
+$cs-gray-light-7: #f8f8f8;
+$cs-gray-light-8: #f4f6f9;
+$cs-gray-light-9: #fdfdfd;
+$cs-gray-light-10: #f3f2f2;
+$cs-gray-light-11: #fafaf9;
+$cs-blue-sf: #0070d2;
+$cs-blue: #00abd3;
+$cs-blue-dark-1: #16325c;
+$cs-blue-dark-2: #1b3d71;
+$cs-blue-dark-3: #54698d;
+$cs-blue-dark-4: #164A85;
+$cs-blue-medium-1: #295497;
+$cs-blue-medium-2: #005fb2;
+$cs-blue-medium-3: #0062b8;
+$cs-blue-medium-4: #016fc0;
+$cs-blue-medium-5: #1589ee;
+$cs-blue-medium-6: #5eb4ff;
+$cs-blue-light-1: #d8edff;
+$cs-blue-light-2: #e3f3ff;
+$cs-blue-light-3: #f0f8fc;
+$cs-blue-light-4: #e4ebf6;
+$cs-blue-light-5: #f5f9fd;
+$cs-blue-light-6: #eef1f6;
+$cs-green-dark-1: #1f7245;
+$cs-green-dark-2: #04844b;
+$cs-green-medium-1: #009540;
+$cs-green-medium-2: #5bb85c;
+$cs-green-light-1: #4bca81;
+$cs-mint: #3cdbc0;
+$cs-purple: #4a26ab;
+$cs-purple-medium-1: #7f8de1;
+$cs-orange-dark-1: #9a6319;
+$cs-orange-medium-1: #ffa429;
+$cs-orange-medium-2: #ffb75d;
+$cs-orange-light-1: #fff2e2;
+$cs-red-medium-1: #d81c2a;
+$cs-red-medium-2: #c23934;
+$cs-red-medium-3: #d9675d;
+$cs-red-light-1: #fcedee;
+$cs-white: #ffffff;
+
+$css4: true;
+
+// It is necessary to define the variables in sass map instead of :root, for compatibility reasons.
+$variables: (
+	--cs-main-c: $cs-blue-sf,
+
+	--cs-icon-c: $cs-gray-dark-5,
+	--cs-icon-frame-c: $cs-white,
+
+	--cs-shadow-focus: $cs-blue-sf,
+	--cs-shadow-light: rgba($cs-black, 0.1),
+	--cs-shadow-medium: rgba($cs-black, 0.22),
+	--cs-shadow-dark: rgba($cs-black, 0.5),
+
+	--cs-button-default-c: $cs-blue-sf,
+	--cs-button-inverse-c: $cs-white,
+	--cs-button-default-bg: $cs-white,
+	--cs-button-default-br: $cs-gray-light-2,
+	--cs-button-default-box: $cs-blue-sf,
+	--cs-button-white-br: $cs-white,
+	--cs-button-transparent-focus-bg: rgba($cs-black, 0.02),
+	--cs-button-transparent-inverse-focus-bg: rgba($cs-white, 0.08),
+	--cs-button-brand-bg: $cs-blue-sf,
+	--cs-button-brand-br: $cs-blue-sf,
+	--cs-button-error-c: $cs-red-medium-2,
+	--cs-button-error-bg: $cs-red-medium-2,
+	--cs-button-error-br: $cs-red-medium-2,
+	--cs-button-error-box: $cs-red-medium-2,
+	--cs-button-success-c: $cs-green-dark-1,
+	--cs-button-success-br: $cs-green-dark-1,
+	--cs-button-success-box: $cs-green-dark-1,
+	--cs-button-success-brand-bg: $cs-green-dark-1,
+	--cs-button-active-br: $cs-blue-sf,
+	--cs-button-hover-bg: $cs-gray-light-8,
+	--cs-button-disabled-c: $cs-gray-light-2,
+	--cs-button-disabled-bg: $cs-gray-medium-3,
+	--cs-button-icon-hover-c: $cs-blue-medium-1,
+
+	--cs-input-placeholder-c: $cs-gray-dark-7,
+
+	--cs-transparent: transparent,
+
+	--cs-alert-info-bg: $cs-gray-dark-5,
+	--cs-alert-info-c: $cs-white,
+	--cs-alert-info-fill: $cs-white,
+	--cs-alert-info-light-bg: $cs-blue-light-2,
+	--cs-alert-info-light-c: $cs-blue-medium-3,
+	--cs-alert-info-light-fill: $cs-blue-sf,
+	--cs-alert-info-box: $cs-blue-sf,
+	--cs-alert-info-br: $cs-blue-sf,
+	--cs-alert-warning-bg: $cs-orange-medium-2,
+	--cs-alert-warning-c: $cs-gray-dark-1,
+	--cs-alert-warning-fill: $cs-gray-dark-4,
+	--cs-alert-warning-box: $cs-orange-medium-1,
+	--cs-alert-warning-br: $cs-orange-medium-1,
+	--cs-alert-warning-light-bg: $cs-orange-light-1,
+	--cs-alert-warning-light-c: $cs-orange-dark-1,
+	--cs-alert-warning-light-fill: $cs-orange-medium-1,
+	--cs-alert-error-bg: $cs-red-medium-2,
+	--cs-alert-error-c: $cs-white,
+	--cs-alert-error-fill: $cs-white,
+	--cs-alert-error-light-bg: $cs-red-light-1,
+	--cs-alert-error-light-c: $cs-red-medium-2,
+	--cs-alert-error-light-fill: $cs-red-medium-1,
+	--cs-alert-error-box: $cs-red-medium-1,
+	--cs-alert-error-br: $cs-red-medium-1,
+	--cs-alert-base-bg: $cs-gray-dark-3,
+	--cs-alert-base-c: $cs-white,
+	--cs-alert-base-fill: $cs-white,
+	--cs-alert-base-light-bg: $cs-gray-light-10,
+	--cs-alert-base-light-c: $cs-gray-dark-1,
+	--cs-alert-base-light-fill: $cs-gray-dark-5,
+	--cs-alert-base-box: $cs-gray-dark-5,
+	--cs-alert-base-br: $cs-gray-dark-5,
+	--cs-alert-close-fill: $cs-white,
+	--cs-alert-hover-fill: rgba($cs-white, 0.75),
+	--cs-alert-active-fill: rgba($cs-white, 0.5),
+	--cs-alert-warning-active-fill: rgba($cs-gray-dark-4, 0.5),
+	--cs-alert-box: $cs-gray-light-5,
+	--cs-alert-br: $cs-gray-light-5,
+
+	--cs-input-bg: $cs-white,
+	--cs-input-br: $cs-gray-light-2,
+	--cs-input-active-br: $cs-blue-medium-5,
+	--cs-input-active-bg: $cs-white,
+	--cs-input-disabled-bg: $cs-gray-light-5,
+	--cs-input-disabled-br: $cs-gray-light-2,
+	--cs-input-readonly-shadow-br: $cs-blue-sf,
+	--cs-input-error-c: $cs-red-medium-2,
+	--cs-input-error-br: $cs-red-medium-2,
+	--cs-input-error-shadow: $cs-red-medium-1,
+	--cs-input-shadow: $cs-blue-sf,
+	--cs-input-icon-fill: $cs-gray-medium-2,
+	--cs-input-clear: $cs-gray-medium-2,
+
+	--cs-datepicker-c: $cs-gray-dark-2,
+	--cs-datepicker-bg: $cs-white,
+	--cs-datepicker-br: $cs-gray-light-2,
+	--cs-datepicker-active-br: $cs-blue-medium-5,
+	--cs-datepicker-shadow: $cs-blue-sf,
+	--cs-datepicker-disabled-bg: $cs-gray-light-5,
+	--cs-datepicker-disabled-br: $cs-gray-medium-3,
+	--cs-datepicker-icon-hover: $cs-gray-medium-2,
+	--cs-datepicker-selected-bg: $cs-blue-sf,
+	--cs-datepicker-selected-c: $cs-white,
+	--cs-datepicker-keyboard-bg: $cs-blue-light-1,
+	--cs-datepicker-keyboard-c: $cs-gray-dark-2,
+	--cs-datepicker-hover-bg: $cs-blue-light-2,
+	--cs-datepicker-error-c: $cs-red-medium-2,
+	--cs-datepicker-error-br: $cs-red-medium-2,
+	--cs-datepicker-error-shadow: $cs-red-medium-1,
+	--cs-datepicker-today-bg: $cs-gray-light-4,
+	--cs-datepicker-today-hover: $cs-gray-light-1,
+	--cs-datepicker-today-active: $cs-gray-medium-2,
+	--cs-datepicker-today-indicator-bg: $cs-gray-light-5,
+	--cs-datepicker-day-outside-c: $cs-gray-dark-5,
+
+	--cs-toggle-c: $cs-gray-dark-2,
+	--cs-toggle-br: $cs-gray-medium-2,
+	--cs-toggle-bg: $cs-gray-medium-2,
+	--cs-toggle-circle-bg: $cs-white,
+	--cs-toggle-tick-br: $cs-white,
+	--cs-toggle-hover-bg: $cs-gray-medium-1,
+	--cs-toggle-checked-bg: $cs-blue-sf,
+	--cs-toggle-checked-br: $cs-blue-sf,
+	--cs-toggle-checked-hover-bg: $cs-blue-medium-1,
+	--cs-toggle-checked-hover-br: $cs-blue-medium-1,
+	--cs-toggle-disabled-bg: $cs-gray-medium-2,
+	--cs-toggle-disabled-br: $cs-gray-medium-2,
+	--cs-toggle-disabled-circle-bg: $cs-gray-light-2,
+	--cs-toggle-focus-br: $cs-blue-medium-5,
+	--cs-toggle-focus-box: $cs-blue-sf,
+	--cs-toggle-required-c: $cs-red-medium-2,
+	--cs-toggle-error-br: $cs-red-medium-2,
+	--cs-toggle-error-box: $cs-red-medium-1,
+
+	--cs-tooltip-info-bg: $cs-blue-dark-1,
+	--cs-tooltip-info-c: $cs-white,
+	--cs-tooltip-icon-info: $cs-gray-dark-5,
+	--cs-tooltip-error-bg: $cs-red-medium-2,
+	--cs-tooltip-error-c: $cs-white,
+	--cs-tooltip-warning-bg: $cs-orange-medium-2,
+	--cs-tooltip-warning-c: $cs-gray-dark-1,
+	--cs-tooltip-success-bg: $cs-green-dark-2,
+	--cs-tooltip-success-c: $cs-white,
+	--cs-tooltip-basic-bg: $cs-white,
+	--cs-tooltip-basic-fill: $cs-gray-dark-2,
+	--cs-tooltip-basic-br: $cs-gray-light-2,
+	--cs-tooltip-body-bg: $cs-white,
+	--cs-tooltip-body-c: $cs-gray-dark-1,
+	--cs-tooltip-body-border: $cs-gray-light-2,
+	--cs-tooltip-shadow: $cs-black,
+	--cs-tooltip-info-hover-c: $cs-blue-medium-2,
+	--cs-tooltip-header-bg: $cs-white,
+
+	--cs-label-c: $cs-gray-dark-2,
+	--cs-label-required-c: $cs-red-medium-2,
+
+	--cs-checkbox-bg-neutral: $cs-white,
+	--cs-checkbox-bg-brand: $cs-blue-sf,
+	--cs-checkbox-br: $cs-gray-light-2,
+	--cs-checkbox-neutral-checked-br: $cs-blue-sf,
+	--cs-checkbox-brand-checked-br: $cs-white,
+	--cs-checkbox-brand-focus-br: $cs-blue-sf,
+	--cs-checkbox-focus-br: $cs-blue-medium-5,
+	--cs-checkbox-focus-box: $cs-blue-sf,
+	--cs-checkbox-disabled-bg: $cs-gray-light-5,
+	--cs-checkbox-disabled-br: $cs-gray-medium-3,
+	--cs-checkbox-disabled-checked-br: $cs-gray-medium-1,
+	--cs-checkbox-required-c: $cs-red-medium-2,
+	--cs-checkbox-error-br: $cs-red-medium-2,
+	--cs-checkbox-error-c: $cs-red-medium-2,
+	--cs-checkbox-error-active-shadow: $cs-red-medium-2,
+	--cs-checkbox-error-focus-shadow: $cs-red-medium-1,
+	--cs-checkbox-label-c: $cs-gray-dark-2,
+
+	--cs-pagination-bg: $cs-white,
+	--cs-pagination-br: $cs-gray-light-2,
+	--cs-pagination-c: $cs-blue-sf,
+	--cs-pagination-hover-bg: $cs-gray-light-8,
+	--cs-pagination-icon-bg: $cs-gray-medium-2,
+
+	--cs-table-c: $cs-black,
+	--cs-table-alt-c: $cs-blue-sf,
+	--cs-table-br: $cs-gray-light-2,
+	--cs-table-cell-bg: $cs-white,
+	--cs-table-row-hover-cell-bg: $cs-gray-light-10,
+	--cs-table-row-selected-cell-bg: $cs-blue-light-1,
+	--cs-table-header-cell-bg: $cs-gray-light-11,
+
+	--cs-path-item-initial-bg: $cs-gray-light-5,
+	--cs-path-item-initial-hover: $cs-gray-light-2,
+	--cs-path-item-initial-active: $cs-gray-medium-3,
+	--cs-path-item-inital-c: $cs-gray-dark-1,
+	--cs-path-item-icon: $cs-white,
+	--cs-path-item-status-c: $cs-white,
+	--cs-path-item-active-bg: $cs-blue-sf,
+	--cs-path-item-active-hover: $cs-blue-dark-4,
+	--cs-path-item-active: $cs-blue-dark-2,
+	--cs-path-item-active-c: $cs-white,
+	--cs-path-item-success-bg: $cs-green-light-1,
+	--cs-path-item-success-hover: $cs-green-dark-2,
+	--cs-path-item-success-active: $cs-green-dark-1,
+	--cs-path-item-error-bg: $cs-red-medium-1,
+	--cs-path-item-error-hover: darken($cs-red-medium-1, 8%),
+	--cs-path-item-error-active: darken($cs-red-medium-1, 15%),
+	--cs-path-item-warning-bg: $cs-orange-medium-2,
+	--cs-path-item-warning-c: $cs-gray-dark-1,
+	--cs-path-item-warning-hover: darken($cs-orange-medium-1, 8%),
+	--cs-path-item-warning-active: $cs-orange-dark-1,
+	--cs-path-item-warning-icon: $cs-gray-dark-4,
+	--cs-path-item-disabled-c: $cs-gray-dark-5,
+	--cs-path-item-disabled-bg: $cs-gray-light-6,
+
+	--cs-main-header-neutral-bg: $cs-white,
+	--cs-main-header-neutral-c: $cs-gray-dark-1,
+	--cs-main-header-subtitle-c: $cs-gray-dark-2,
+	--cs-main-header-neutral-icon: $cs-purple,
+	--cs-main-header-brand-bg: $cs-blue-sf,
+	--cs-main-header-brand-c: $cs-white,
+	--cs-main-header-brand-icon: $cs-white,
+	--cs-main-header-error-bg: $cs-red-medium-2,
+	--cs-main-header-error-c: $cs-white,
+	--cs-main-header-error-icon: $cs-white,
+	--cs-main-header-info-bg: $cs-gray-dark-7,
+	--cs-main-header-info-c: $cs-white,
+	--cs-main-header-info-icon: $cs-white,
+	--cs-main-header-success-bg: $cs-green-dark-1,
+	--cs-main-header-success-c: $cs-white,
+	--cs-main-header-success-icon: $cs-white,
+
+	--cs-spinner-light-bg: rgba($cs-white, 0.75),
+	--cs-spinner-dark-bg: rgba($cs-gray-dark-1, 0.6),
+	--cs-spinner-neutral-bg: $cs-gray-medium-2,
+	--cs-spinner-brand-bg: $cs-blue-medium-5,
+	--cs-spinner-inverse-bg: $cs-white,
+
+	--cs-modal-wrapper-bg: rgba($cs-gray-dark-1, 0.6),
+	--cs-modal-bg: $cs-white,
+	--cs-modal-footer-bg: $cs-gray-light-6,
+	--cs-modal-br: $cs-gray-light-2,
+	--cs-modal-close-fill: $cs-white,
+	--cs-modal-close-hover-fill: rgba($cs-white, 0.75),
+	--cs-modal-close-active-fill: rgba($cs-white, 0.5),
+	--cs-modal-close-focus-box: $cs-gray-light-5,
+	--cs-modal-close-focus-br: $cs-gray-light-5,
+	--cs-modal-box: rgba($cs-black, 0.16),
+	--cs-modal-c: $cs-gray-dark-1,
+	--cs-modal-c-alt: $cs-gray-medium-2,
+
+	--cs-toast-info-bg: $cs-gray-dark-5,
+	--cs-toast-info-c: $cs-white,
+	--cs-toast-info-fill: $cs-white,
+	--cs-toast-success-bg: $cs-green-dark-2,
+	--cs-toast-success-c: $cs-white,
+	--cs-toast-success-fill: $cs-white,
+	--cs-toast-warning-bg: $cs-orange-medium-2,
+	--cs-toast-warning-c: $cs-gray-dark-1,
+	--cs-toast-warning-fill: $cs-gray-dark-4,
+	--cs-toast-warning-hover-fill: $cs-gray-dark-5,
+	--cs-toast-warning-box: $cs-gray-dark-4,
+	--cs-toast-warning-br: $cs-gray-dark-4,
+	--cs-toast-error-bg: $cs-red-medium-2,
+	--cs-toast-error-c: $cs-white,
+	--cs-toast-error-fill: $cs-white,
+	--cs-toast-close-fill: $cs-white,
+	--cs-toast-hover-fill: rgba($cs-white, 0.75),
+	--cs-toast-active-fill: rgba($cs-white, 0.5),
+	--cs-toast-box: $cs-gray-light-5,
+	--cs-toast-br: $cs-gray-light-5,
+
+	--cs-tab-br: $cs-gray-light-2,
+	--cs-tab-c: $cs-gray-dark-2,
+	--cs-tab-active-c: $cs-gray-dark-1,
+	--cs-tab-active-br: $cs-blue-medium-5,
+	--cs-tab-active-bg: $cs-gray-light-7,
+	--cs-tab-hover-br: $cs-blue-sf,
+	--cs-tab-error-br: $cs-red-medium-2,
+	--cs-tab-warning-br: $cs-orange-medium-2,
+	--cs-tab-success-br: $cs-green-medium-1,
+	--cs-tab-error-fill: $cs-red-medium-2,
+	--cs-tab-warning-fill: $cs-orange-medium-2,
+	--cs-tab-success-fill: $cs-green-medium-1,
+	--cs-tab-disabled-c: $cs-gray-light-2,
+
+	--cs-custom-select-dropdown-bg: $cs-white,
+	--cs-custom-select-dropdown-br: $cs-gray-light-3,
+	--cs-custom-select-dropdown-shadow: $cs-gray-light-2,
+	--cs-custom-select-dropdown-hover-bg: $cs-gray-light-10,
+	--cs-custom-select-dropdown-icon-c: $cs-gray-medium-2,
+	--cs-option-ms-item-selected-hover: $cs-gray-light-8,
+	--cs-option-ms-item-selected-br: $cs-gray-light-2,
+	--cs-option-ms-item-selected-bg: $cs-white,
+	--cs-option-ms-item-selected-shadow: $cs-blue-sf,
+	--cs-option-ms-item-selected-focus: $cs-blue-medium-5,
+	--cs-option-ms-item-selected-delete: $cs-gray-dark-5,
+	--cs-option-list-item-fill: $cs-blue-sf,
+	--cs-option-list-item-selected-bg: $cs-blue-light-1,
+	--cs-custom-select-no-data-c: $cs-gray-medium-2,
+	--cs-selected-input-option-c:  $cs-gray-medium-2,
+
+	--cs-chip-transparent-bg: transparent,
+	--cs-chip-c: $cs-white,
+	--cs-chip-neutral-bg: $cs-gray-light-5,
+	--cs-chip-neutral-c: $cs-gray-dark-1,
+	--cs-chip-neutral-br: $cs-gray-medium-1,
+	--cs-chip-brand-bg: $cs-blue-sf,
+	--cs-chip-brand-c: $cs-blue-sf,
+	--cs-chip-brand-br: $cs-blue-sf,
+	--cs-chip-warning-bg: $cs-orange-medium-2,
+	--cs-chip-warning-c: $cs-gray-dark-1,
+	--cs-chip-warning-alt-c: $cs-orange-dark-1,
+	--cs-chip-warning-br: $cs-orange-medium-2,
+	--cs-chip-error-bg: $cs-red-medium-2,
+	--cs-chip-error-c: $cs-red-medium-2,
+	--cs-chip-error-br: $cs-red-medium-2,
+	--cs-chip-success-bg: $cs-green-dark-2,
+	--cs-chip-success-c: $cs-green-dark-2,
+	--cs-chip-success-br: $cs-green-dark-2,
+	--cs-chip-dark-bg: $cs-gray-dark-5,
+	--cs-chip-dark-c: $cs-gray-dark-5,
+	--cs-chip-dark-br: $cs-gray-dark-5,
+
+	--cs-card-c: $cs-black,
+	--cs-card-bg: $cs-white,
+	--cs-card-br: $cs-gray-light-3,
+	--cs-card-shadow: $cs-gray-light-4,
+	--cs-card-header-br: $cs-gray-light-2,
+
+	--cs-section-bg: $cs-gray-light-10,
+	--cs-section-hover-bg: $cs-blue-light-6,
+	--cs-section-button-shadow: $cs-blue-sf,
+
+	--cs-progress-bar-info-text-c: $cs-gray-dark-1,
+	--cs-progress-bar-bg: $cs-gray-light-2,
+	--cs-progress-bar-neutral-bg: $cs-blue-medium-6,
+	--cs-progress-bar-success-bg: $cs-green-medium-2,
+	--cs-progress-bar-error-bg: $cs-red-medium-3,
+
+	--cs-input-file-btn-bg: $cs-white,
+	--cs-input-file-btn-c: $cs-blue-sf,
+	--cs-input-file-btn-br: $cs-gray-light-2,
+	--cs-input-file-btn-hover-bg: $cs-gray-light-11,
+	--cs-input-file-btn-disabled-bg: $cs-white,
+	--cs-input-file-btn-disabled-c: $cs-gray-light-2,
+	--cs-input-file-icon-fill: $cs-blue-sf,
+	--cs-input-file-disabled-icon-fill: $cs-gray-light-5,
+	--cs-input-file-shadow: $cs-blue-medium-1,
+	--cs-input-file-error-c: $cs-red-medium-2,
+	--cs-input-file-error-icon-fill: $cs-red-medium-2,
+	--cs-input-file-error-shadow: $cs-red-medium-2,
+	--cs-input-file-dashed-br: $cs-gray-light-2,
+	--cs-input-file-drop-area-highlighted-bg: $cs-gray-light-11,
+	--cs-input-file-drop-area-highlighted-hover-bg: $cs-gray-light-6,
+	--cs-input-file-drop-area-bg: $cs-white,
+	--cs-input-file-drop-area-hover-bg: $cs-gray-light-11,
+	--cs-input-file-drop-area-hover-br: $cs-blue-sf,
+	--cs-input-file-error-drop-area-hover-br: $cs-red-medium-2,
+	--cs-input-file-dragged-over-bg: $cs-gray-light-6,
+
+	--cs-radio-bg-default: $cs-blue-sf,
+	--cs-radio-bg-neutral: $cs-white,
+	--cs-radio-bg-brand: $cs-blue-sf,
+	--cs-radio-bg-inner-brand: $cs-white,
+	--cs-radio-br: $cs-gray-light-2,
+	--cs-radio-focus-br: $cs-blue-medium-5,
+	--cs-radio-focus-box: $cs-blue-sf,
+	--cs-radio-disabled-bg: $cs-gray-light-5,
+	--cs-radio-disabled-br: $cs-gray-medium-3,
+	--cs-radio-disabled-checked-br: $cs-gray-medium-1,
+	--cs-radio-error-br: $cs-red-medium-2,
+	--cs-radio-error-bg: $cs-red-medium-2,
+	--cs-radio-error-active-shadow: $cs-red-medium-2,
+	--cs-radio-error-focus-shadow: $cs-red-medium-1,
+	--cs-radio-label-c: $cs-gray-dark-2,
+
+	--cs-divider-label-bg: $cs-white,
+
+	--cs-lookup-results-br:  $cs-gray-light-2,
+	--cs-lookup-results-header-c: $cs-gray-medium-1,
+	--cs-lookup-results-row-c: $cs-gray-dark-1,
+	--cs-lookup-dropdown-msg-c: $cs-gray-medium-2,
+	--cs-lookup-dropdown-msg-bg: $cs-white,
+	--cs-lookup-dropdown-msg-inverse-bg: $cs-gray-light-7,
+	--cs-lookup-dropdown-msg-inverse-br: $cs-gray-light-2,
+	--cs-lookup-dropdown-msg-inverse-c: $cs-gray-dark-5,
+
+	--cs-slider-range-c: $cs-gray-dark-2,
+	--cs-slider-range-track-bg: $cs-gray-light-5,
+	--cs-slider-range-thumb-bg: $cs-blue-sf,
+	--cs-slider-range-thumb-hover: $cs-blue-medium-2,
+	--cs-slider-range-thumb-active: $cs-blue-medium-2,
+	--cs-slider-range-thumb-disabled-bg: $cs-gray-light-5,
+	--cs-slider-range-thumb-shadow: rgba($cs-black, 0.16),
+
+	--cs-selection-bg: $cs-blue-light-1,
+	--cs-selection-c: $cs-gray-dark-1,
+
+	--cs-skip-link-bg: $cs-white,
+
+	--cs-sidebar-shadow: rgba($cs-black, 0.2),
+	--cs-sidebar-bg: $cs-white,
+	--cs-sidebar-title-c: $cs-gray-dark-1,
+	--cs-sidebar-subtitle-c: $cs-gray-dark-4,
+	--cs-sidebar-toggle-btn-c: $cs-gray-dark-5,
+	--cs-sidebar-tabs-wrapper-bg: $cs-gray-light-11,
+	--cs-sidebar-tab-selected-bg: $cs-gray-light-4,
+
+	--cs-list-item-c: $cs-gray-dark-2,
+	--cs-list-item-hover-bg: $cs-gray-light-7,
+	--cs-list-item-focus-bg: $cs-gray-light-5,
+	--cs-list-item-active-bg: $cs-blue-light-1,
+	--cs-list-item-active-br: $cs-blue-sf,
+	--cs-list-item-disabled-c: $cs-gray-light-2,
+	--cs-list-item-header-br: $cs-gray-medium-3,
+	--cs-list-item-header-hover: $cs-blue-light-6,
+	--cs-list-item-header-box: $cs-blue-sf,
+	--cs-list-item-header-c: $cs-gray-dark-5,
+	--cs-list-item-header-bg: $cs-gray-light-8,
+
+	--cs-transfer-list-br: $cs-gray-medium-3,
+	--cs-transfer-list-header-br: $cs-gray-light-2,
+	--cs-transfer-list-item-selected-bg: $cs-blue-light-1,
+	--cs-transfer-list-item-box: $cs-blue-sf,
+	--cs-transfer-list-item-disabled-c: $cs-gray-medium-3,
+	--cs-transfer-list-item-hover:  $cs-gray-light-6,
+	--cs-transfer-list-no-data-c: $cs-gray-medium-2,
+
+	--cs-sidebar-list-shadow: rgba($cs-black, 0.22),
+	--cs-sidebar-list-bg: $cs-white,
+	--cs-sidebar-list-item-hover-bg: $cs-gray-light-7,
+	--cs-sidebar-list-item-focus-bg: $cs-gray-light-5,
+	--cs-sidebar-list-item-active-bg: $cs-blue-light-1,
+	--cs-sidebar-list-item-active-br: $cs-blue-sf,
+
+	--cs-progress-indicator-bg: $cs-gray-light-2,
+	--cs-progress-indicator-br: $cs-white,
+	--cs-progress-indicator-active-bg: $cs-white,
+	--cs-progress-indicator-active-br: $cs-blue-medium-6,
+	--cs-progress-indicator-shadow: $cs-white,
+	--cs-progress-indicator-shadow-alt: $cs-blue-sf,
+	--cs-progress-indicator-shadow-error: $cs-red-medium-2,
+	--cs-progress-indicator-active-hover-br: $cs-blue-sf,
+	--cs-progress-indicator-before-bg: $cs-blue-medium-6,
+	--cs-progress-indicator-before-bg-alt: $cs-gray-light-2,
+	--cs-progress-indicator-complete-bg: $cs-blue-medium-6,
+	--cs-progress-indicator-complete-c: $cs-white,
+	--cs-progress-indicator-error-bg: $cs-white,
+	--cs-progress-indicator-error-c: $cs-red-medium-2,
+	--cs-progress-indicator-loading-bg: $cs-white,
+	--cs-progress-indicator-loading-c: $cs-gray-light-2
+);
+
+// $darkVariables: (
+// 	--cs-main-c: #ff0000,
+// 	--cs-main-bg: darkblue,
+// 	--cs-main-br: $white,
+
+// 	--cs-button-c: $blue-sf,
+// 	--cs-button-bg: $white,
+// 	--cs-button-br: $gray-light-6
+// );
+
+// Every variable that uses main color needs to be set in #root as well
+#root {
+	//--cs-button-c: #{var(--main-c)};
+}
+
+// Here we transfer the variables from the map to the :root element
+@if($css4) {
+	:root {
+		@each $variable, $value in $variables {
+			#{$variable}: $value;
+		}
+	}
+
+	// This will be used later for dark theme support
+	// .dark {
+	// 	@each $variable, $value in $darkVariables {
+	// 		#{$variable}: $value;
+	// 	}
+	// }
+}
+
+/*** HELPER FUNCTIONS ***/
+
+// change value type to string
+@function to-string($value) {
+	@return inspect($value);
+}
+
+/*** BACKGROUND COLOR MIXINS ***/
+
+/* SET BACKGROUND COLOR */
+// $variable: only CSS variable format
+// ex. @include sbg(--button-bg);
+@mixin sbg($variable) {
+	background: map-get($variables, $variable);
+	@supports(--css: variables) {
+		background: unquote('var(' + $variable + ')');
+	}
+}
+
+/* BACKGROUND DARKEN */
+// $variable: CSS variable or SCSS variable [ex. var(--color), $blue-sf] - background color to be darkened
+// $opacity: opacity percentage of black background [value should be between 0 and 1; higher number means darker background]
+// $ie [optional]: any color format [ex. var(--color), $blue-sf, #000, black] - used to set fallback for IE11 when needed - background color to be darkened
+// ex. @include bgd(--button-bg, 0.4);
+// ex. @include bgd(--button-bg, 0.4, var(--main-c));
+@mixin bgd($variable, $opacity, $ie: $variable) {
+	@if (str-slice(to-string($ie), 1, 4) == 'var(') {
+		$length: str-length($ie) - 1;
+		$helper: str-slice($ie, 5, $length);
+		background: map-get($variables, $helper);
+	} @else if (str-slice(to-string($ie), 1, 2) == '--')  {
+		background: map-get($variables, $ie);
+	} @else {
+		background: $ie;
+	}
+
+	@supports(--css: variables) {
+		background: unquote('var(' + $variable + ')');
+		filter: brightness(1 - $opacity);
+	}
+}
+
+/* BACKGROUND LIGHTEN */
+// $variable: CSS variable or SCSS variable [ex. var(--color), $blue-sf] - background color to be lightened
+// $opacity: opacity percentage of white background [value should be between 0 and 1; higher number means lighter background]
+// $ie [optional]: any color format [ex. var(--color), $blue-sf, #000, black] - used to set fallback for IE11 when needed - background color to be lightened
+// ex. @include bgl(--button-bg, 0.4);
+// ex. @include bgl(--button-bg, 0.4, $blue-sf);
+@mixin bgl($variable, $opacity, $ie: $variable) {
+	@if (str-slice(to-string($ie), 1, 4) == 'var(') {
+		$length: str-length($ie) - 1;
+		$helper: str-slice($ie, 5, $length);
+		background: map-get($variables, $helper);
+	} @else if (str-slice(to-string($ie), 1, 2) == '--')  {
+		background: map-get($variables, $ie);
+	} @else {
+		background: $ie;
+	}
+
+	@supports(--css: variables) {
+		background: unquote('var(' + $variable + ')');
+		filter: brightness(1 + $opacity);
+	}
+}
+
+/*** TEXT COLOR MIXINS ***/
+
+/* SET TEXT COLOR */
+// $variable: only CSS variable format
+// ex. @include sc(--button-c);
+@mixin sc($variable) {
+	color: map-get($variables, $variable);
+	@supports(--css: variables) {
+		color: unquote('var(' + $variable + ')');
+	}
+}
+
+/* COLOR DARKEN */
+// $variable: CSS variable or SCSS variable [ex. var(--color), $blue-sf] - color to be darkened
+// $opacity: opacity percentage of black background [value should be between 0 and 1; higher number means darker background]
+// $ie [optional]: any color format [ex. var(--color), $blue-sf, #000, black] - used to set fallback for IE11 when needed - color to be darkened
+// ex. @include cd(--button-bg, 0.4);
+// ex. @include cd(--button-bg, 0.4, $blue-sf);
+@mixin cd($variable, $opacity, $ie: $variable) {
+	@if (str-slice(to-string($ie), 1, 4) == 'var(') {
+		$length: str-length($ie) - 1;
+		$helper: str-slice($ie, 5, $length);
+		color: map-get($variables, $helper);
+	} @else if (str-slice(to-string($ie), 1, 2) == '--')  {
+		color: map-get($variables, $ie);
+	} @else {
+		color: $ie;
+	}
+
+	@supports(--css: variables) {
+		color: unquote('var(' + $variable + ')');
+		filter: brightness(1 - $opacity);
+	}
+}
+
+/* COLOR LIGHTEN */
+// $variable: CSS variable or SCSS variable [ex. var(--color), $blue-sf] - color to be lightened
+// $opacity: opacity percentage of white background [value should be between 0 and 1; higher number means lighter background]
+// $ie [optional]: any color format [ex. var(--color), $blue-sf, #000, black] - used to set fallback for IE11 when needed - color to be lightened
+// ex. @include cl(--button-bg, 0.4);
+// ex. @include cl(--button-bg, 0.4, $blue-sf);
+@mixin cl($variable, $opacity, $ie: $variable) {
+	@if (str-slice(to-string($ie), 1, 4) == 'var(') {
+		$length: str-length($ie) - 1;
+		$helper: str-slice($ie, 5, $length);
+		color: map-get($variables, $helper);
+	} @else if (str-slice(to-string($ie), 1, 2) == '--')  {
+		color: map-get($variables, $ie);
+	} @else {
+		color: $ie;
+	}
+
+	@supports(--css: variables) {
+		color: unquote('var(' + $variable + ')');
+		filter: brightness(1 + $opacity);
+	}
+}
+
+/*** SVG FILL MIXINS ***/
+/* SET FILL COLOR */
+// $variable: only CSS variable format
+// ex. @include sf(--button-c);
+@mixin sf($variable) {
+	fill: map-get($variables, $variable);
+	@supports(--css: variables) {
+		fill: unquote('var(' + $variable + ')');
+	}
+}
+
+/* SVG FILL DARKEN */
+// $variable: CSS variable or SCSS variable [ex. var(--color), $blue-sf] - color to be darkened
+// $opacity: opacity percentage of black background [value should be between 0 and 1; higher number means darker background]
+// $ie [optional]: any color format [ex. var(--color), $blue-sf, #000, black] - used to set fallback for IE11 when needed - color to be darkened
+// ex. @include cd(var(--button-bg), 0.4);
+// ex. @include cd(var(--button-bg), 0.4, $blue-sf);
+@mixin fd($variable, $opacity, $ie: $variable) {
+	@if (str-slice(to-string($ie), 1, 4) == 'var(') {
+		$length: str-length($ie) - 1;
+		$helper: str-slice($ie, 5, $length);
+		fill: map-get($variables, $helper);
+	} @else if (str-slice(to-string($ie), 1, 2) == '--')  {
+		fill: map-get($variables, $ie);
+	} @else {
+		fill: $ie;
+	}
+
+	@supports(--css: variables) {
+		fill: unquote('var(' + $variable + ')');
+		filter: brightness(1 - $opacity);
+	}
+}
+
+/* SVG FILL LIGHTEN */
+// $variable: CSS variable or SCSS variable [ex. var(--color), $blue-sf] - color to be lightened
+// $opacity: opacity percentage of white background [value should be between 0 and 1; higher number means lighter background]
+// $ie [optional]: any color format [ex. var(--color), $blue-sf, #000, black] - used to set fallback for IE11 when needed - color to be lightened
+// ex. @include cl(var(--button-bg), 0.4);
+// ex. @include cl(var(--button-bg), 0.4, $blue-sf);
+@mixin fl($variable, $opacity, $ie: $variable) {
+	@if (str-slice(to-string($ie), 1, 4) == 'var(') {
+		$length: str-length($ie) - 1;
+		$helper: str-slice($ie, 5, $length);
+		fill: map-get($variables, $helper);
+	} @else if (str-slice(to-string($ie), 1, 2) == '--')  {
+		fill: map-get($variables, $ie);
+	} @else {
+		fill: $ie;
+	}
+
+	@supports(--css: variables) {
+		fill: unquote('var(' + $variable + ')');
+		filter: brightness(1 + $opacity);
+	}
+}
+
+
+/*** OTHER ***/
+
+/* HELPER MIXIN FOR IE FALLBACK */
+// Mixin temporally sets the $css4 variable to false, compiles the IE fallback, then makes the variable true again and compiles the css4 code
+// It should contain properties that use css4 variables (other than background and text color), otherwise there will be unnecessary duplication of properties.
+@mixin css4 {
+	$css4: false !global;
+	@content;
+	$css4: true !global;
+	@supports(--css: variables) {
+		@content;
+	}
+}
+
+/* CUSTOM VAR FUNCTION - borders, box-shadow, gradients... */
+// $variable: only CSS variable format - this color will be returned from function
+// $ie [optional]: any color format [ex. var(--color), $blue-sf, #000, black] - used to set fallback for IE11 when needed - color to be returned from function for IE only
+// to change border variable to new color it is necessary to define it within @css4 mixin [see example]
+// ex.
+// @include css4 {
+//	--border-c: #{var(--main-c)};
+//	border: 1px solid cvar(--border-c, var(--main-c));
+// }
+@function cvar($variable, $ie: $variable) {
+	@if($css4==false) {
+		@if (str-slice(to-string($ie), 1, 4) == 'var(') {
+			$length: str-length($ie) - 1;
+			$helper: str-slice($ie, 5, $length);
+			@return map-get($variables, $helper);
+		} @else if (str-slice(to-string($ie), 1, 2) == '--')  {
+			@return map-get($variables, $ie);
+		} @else {
+			@return $ie;
+		}
+	} @else {
+		@return unquote('var(' + $variable + ')');
+	}
+}
