@@ -137,7 +137,7 @@ class CPGrid extends React.Component<CSModalPreviewState> {
                                         className="open-modal-btn"
                                         label="New"
                                         borderRadius="0 0.25rem 0.25rem 0"
-                                        onClick={() => this.setState({ thirdModalVisible: true })}
+                                        onClick={() => this.setState({ secondModalVisible: true })}
                                     />
                                 </div>
                             </div>
