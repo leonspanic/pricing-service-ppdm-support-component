@@ -15,12 +15,6 @@ import {
     CSLookup
 } from '@cloudsense/cs-ui-components';
 
-interface CSModalPreviewState {
-    visibleModal?: string;
-    secondModalVisible: boolean;
-    thirdModalVisible: boolean;
-}
-
 const sampleLookup = {
     columns: [
         { key: 'Account', label: 'Account' },
@@ -57,14 +51,14 @@ const sampleLookup = {
     ]
 };
 
-class CPGrid extends React.Component<CSModalPreviewState> {
+class CPGrid extends React.Component {
     state = {
         visibleModal: undefined,
         secondModalVisible: false,
         thirdModalVisible: false
     };
 
-    openModal = (modalId: string) => {
+    openModal = (modalId) => {
         this.setState({ visibleModal: modalId });
     }
     closeModal = () => {

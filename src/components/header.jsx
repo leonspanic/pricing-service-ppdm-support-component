@@ -8,7 +8,7 @@ import {
     CSImage,
 } from '@cloudsense/cs-ui-components';
 
-class Header extends React.Component<> {
+class Header extends React.Component {
     render() {
         return (
             <>
