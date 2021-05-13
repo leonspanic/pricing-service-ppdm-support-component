@@ -3,7 +3,7 @@ var mode = 'development';
 
 module.exports = {
 	mode: mode,
-	entry: "./src/index.tsx",
+	entry: "./src/index.js",
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: "index.js",

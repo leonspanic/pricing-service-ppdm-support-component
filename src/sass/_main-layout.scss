@@ -3,10 +3,14 @@ html {
     body {
         margin: 0;
         padding: 0;
-        .cs-app-wrapper {
-            display: flex;
-            flex-direction: column;
+        height: 100%;
+        div#root {
             height: 100%;
+            .cs-app-wrapper {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
         }
     }
 }
