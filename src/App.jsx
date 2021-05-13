@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Header from './header';
-import CPGrid from './cp-grid';
+import Header from './components/header';
+import CPGrid from './components/cp-grid';
 
 class App extends React.Component {
     render() {
